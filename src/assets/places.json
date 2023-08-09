@@ -1,0 +1,48 @@
+[
+  {
+    "bars": [
+      "kingfisher",
+      "hi_wire",
+      "ponysaurus",
+      "fullsteam",
+      "surf_club",
+      "accordian_club",
+      "clouds",
+      "geer_st_garden",
+      "glass_jug",
+      "dram_draught",
+      "drm_hotel_roof"
+    ],
+    "new_spots": [
+      "saltbox",
+      "naan_stop",
+      "la_mala",
+      "southern_thing",
+      "goorsha",
+      "exvoto",
+      "mavericks",
+      "east_coast_asian_bistro",
+      "roses_dumplings",
+      "boricua_soul",
+      "mezcalito"
+    ],
+    "raleigh_spots": [
+      "taverna_agora",
+      "morgan_food_hall"
+    ],
+    "breakfast": [
+      "elmos",
+      "dames",
+      "monuts",
+      "press",
+      "ny_bagel_raleigh",
+      "foster_market",
+      "gugglehopf"
+    ],
+    "sandwiches": [
+      "eastcut",
+      "ideals",
+      "parker_otis"
+    ]
+  }
+]
