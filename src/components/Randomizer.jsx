@@ -12,10 +12,14 @@ function Randomizer() {
   }
   // * something needs tweaking with the transition-transform duration-[...]
   // * works better with duration-[50ms] vs how it is now
+  // bg-gradient-to-r from-teal-400 to-yellow-200
+  // bg-gradient-to-br from-teal-400 to-yellow-200
+  // bg-gradient-to-r from-teal-200 to-teal-500
+  // bg-gradient-to-br from-emerald-400 to-cyan-400
 
   return (
     <>
-      <div className="flex flex-col items-center mx-auto my-4 p-6 w-3/4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div className="flex flex-col items-center mx-auto my-4 p-6 w-3/4 bg-gradient-to-br from-emerald-400 to-cyan-400 opacity-90 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <h3 className="mb-3 text-center text-2xl font-semibold tracking-tight dark:text-white">
           Welcome to the Random Restaurant Generator
         </h3>
