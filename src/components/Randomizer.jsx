@@ -30,13 +30,16 @@ function Randomizer() {
           onClick={pickRest}
           className="font-mono font-semibold bg-gradient-to-r from-pink-400 to-rose-400 opacity-90 uppercase w-48 bg-slate-100 py-3 px-4 rounded border-2 border-black shadow-[0.25rem_0.25rem_#121212] transition-transform-box-shadow duration-[50ms] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[0.125rem_0.125rem_#121212]"
         >
-          Retro Button!
+          Pick Spot!
         </button>
-        <span className="py-3 underline">I choose: </span>
-        <span className=" border-2 border-gray-700 rounded-md p-1 shadow-md">
+        {/* <span className="pt-3 underline">I choose: </span> */}
+        {/* <span className=" border-2 border-gray-700 rounded-md p-1 shadow-md">
           {choice && choice}
-        </span>
+        </span> */}
       </section>
+      <div className="flex justify-center p-4 border-2 w-1/5 mx-auto border-gray-500 rounded-md shadow-md">
+        {choice && choice}
+      </div>
     </>
   );
 }
