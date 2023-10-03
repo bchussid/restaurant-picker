@@ -1,4 +1,3 @@
-[
   {
     "bars": [
       "kingfisher",
@@ -29,7 +28,7 @@
     "raleigh_spots": [
       "taverna_agora",
       "morgan_food_hall"
-    ],
+  ],
     "breakfast": [
       "elmos",
       "dames",
@@ -40,9 +39,16 @@
       "gugglehopf"
     ],
     "sandwiches": [
-      "eastcut",
-      "ideals",
+      "eastcut", 
+      "ideals", 
       "parker_otis"
+    ],
+    "favorites": [
+      "Queeny's", 
+      "Thai on Main", 
+      "Viceroy", 
+      "Grub", 
+      "Krill"
     ]
   }
-]
+

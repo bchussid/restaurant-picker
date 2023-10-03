@@ -1,9 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+// import spots from "../assets/places.json";
 
 function Randomizer() {
   const PLACES = ["Queeny's", "Thai on Main", "Viceroy", "Grub", "Krill"];
-
+  // const [places, setPlaces] = useState("")
   const [choice, setChoice] = useState("");
+
+  useEffect(() => {
+    async function getPlaces() {
+      try {
+      const res = await axios.get('/public/assets/places.json')
+      // let bars = res.bars
+      console.log(res.data)
+      } catch (error) {
+        console.error(error)
+      }
+      // setPlaces(res)
+      // console.log(places)
+    }
+    getPlaces()
+  }, [])
 
   function pickRest() {
     let pickedRest = PLACES[Math.floor(Math.random() * PLACES.length)];
