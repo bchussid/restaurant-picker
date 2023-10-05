@@ -9,8 +9,9 @@ function Randomizer() {
   const [choice, setChoice] = useState("");
   // categories
   const [categories, setCategories] = useState("");
-  // restuarants by category
-  const [options, setOptions] = useState("");
+  
+  // *restuarants by category
+  // const [options, setOptions] = useState("");
 
   useEffect(() => {
     async function getCategories() {
@@ -47,9 +48,9 @@ function Randomizer() {
         <select
           id="choices"
           name="choices"
-          onChange={(e) => {
-            setOptions(e.target.value);
-          }}
+          // onChange={(e) => {
+          //   setOptions(e.target.value);
+          // }}
         >
           {categories &&
             categories.map((category) => (
