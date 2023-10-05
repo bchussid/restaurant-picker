@@ -1,34 +1,40 @@
 import { useEffect, useState } from "react";
+// import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react";
 import axios from "axios";
 // import spots from "../assets/places.json";
 
 function Randomizer() {
   const PLACES = ["Queeny's", "Thai on Main", "Viceroy", "Grub", "Krill"];
-  // const [places, setPlaces] = useState("")
+
   const [choice, setChoice] = useState("");
   // categories
-  const [options, setOptions] = useState("")
-
+  const [categories, setCategories] = useState("");
+  // restuarants by category
+  const [options, setOptions] = useState("");
 
   useEffect(() => {
-    async function getPlaces() {
+    async function getCategories() {
       try {
         const res = await axios.get("/public/assets/places.json");
-        setOptions(Object.keys(res.data))
-        return options
+        setCategories(Object.keys(res.data));
+        return categories;
       } catch (error) {
         console.error(error);
       }
     }
-    getPlaces();
+    getCategories();
   }, []);
-  
+
+  // TODO
+  // abstract fetching logic to different components
+  // logic to get options by category - custom hook?
 
   function pickRest() {
     let pickedRest = PLACES[Math.floor(Math.random() * PLACES.length)];
     setChoice(pickedRest);
     return choice;
   }
+  console.log();
 
   return (
     <>
@@ -38,16 +44,41 @@ function Randomizer() {
         </h3>
         <p className="pb-3"> Maybe the options go here (dropdown, etc.) </p>
         <label htmlFor="choices"></label>
-        <select id="choices" name="choices"
-       
+        <select
+          id="choices"
+          name="choices"
+          onChange={(e) => {
+            setOptions(e.target.value);
+          }}
         >
-
-        {options && options.map((spots) => (
-          <option key={spots} value={spots}>
-            {spots}
-          </option>
-        ))}
+          {categories &&
+            categories.map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
         </select>
+
+        {/* THE FOLLOWING DOESN'T WORK - KEY ISSUE. DUMB */}
+
+        {/* <Dropdown>
+          <DropdownTrigger>
+            <Button variant="solid">
+              Pick Category
+            </Button>
+          </DropdownTrigger>
+          <DropdownMenu aria-label="Dynamic Actions" items={options}>
+            {(option) => (
+              <DropdownItem
+                key={option}
+                color="default"
+                className="default"
+                >
+                  {option}
+                </DropdownItem>
+            )}
+          </DropdownMenu>
+        </Dropdown> */}
 
         <button
           onClick={pickRest}
