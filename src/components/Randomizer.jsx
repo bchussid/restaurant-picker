@@ -9,16 +9,18 @@ function Randomizer() {
   const [choice, setChoice] = useState("");
   // categories
   const [categories, setCategories] = useState("");
-  
+
+  const [chosenCat, setChosenCat] = useState("bars")
+
   // *restuarants by category
-  // const [options, setOptions] = useState("");
+  const [options, setOptions] = useState("");
 
   useEffect(() => {
     async function getCategories() {
       try {
         const res = await axios.get("/public/assets/places.json");
         setCategories(Object.keys(res.data));
-        return categories;
+        setOptions(res.data)
       } catch (error) {
         console.error(error);
       }
@@ -26,6 +28,8 @@ function Randomizer() {
     getCategories();
   }, []);
 
+  console.log(options)
+  console.log(chosenCat)
   // TODO
   // abstract fetching logic to different components
   // logic to get options by category - custom hook?
@@ -35,7 +39,6 @@ function Randomizer() {
     setChoice(pickedRest);
     return choice;
   }
-  console.log();
 
   return (
     <>
@@ -48,9 +51,9 @@ function Randomizer() {
         <select
           id="choices"
           name="choices"
-          // onChange={(e) => {
-          //   setOptions(e.target.value);
-          // }}
+          onChange={(e) => {
+            setChosenCat(e.target.value);
+          }}
         >
           {categories &&
             categories.map((category) => (
