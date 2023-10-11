@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-// import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react";
 import axios from "axios";
-// import spots from "../assets/places.json";
+import Dropdown from "./Dropdown";
 
 function Randomizer() {
   const PLACES = ["Queeny's", "Thai on Main", "Viceroy", "Grub", "Krill"];
@@ -10,7 +9,7 @@ function Randomizer() {
   // categories
   const [categories, setCategories] = useState("");
 
-  const [chosenCat, setChosenCat] = useState("bars")
+  const [chosenCat, setChosenCat] = useState("bars");
 
   // *restuarants by category
   const [options, setOptions] = useState("");
@@ -20,7 +19,7 @@ function Randomizer() {
       try {
         const res = await axios.get("/public/assets/places.json");
         setCategories(Object.keys(res.data));
-        setOptions(res.data)
+        setOptions(res.data);
       } catch (error) {
         console.error(error);
       }
@@ -28,8 +27,8 @@ function Randomizer() {
     getCategories();
   }, []);
 
-  console.log(options)
-  console.log(chosenCat)
+  console.log(options);
+  console.log(chosenCat);
   // TODO
   // abstract fetching logic to different components
   // logic to get options by category - custom hook?
@@ -62,27 +61,7 @@ function Randomizer() {
               </option>
             ))}
         </select>
-
-        {/* THE FOLLOWING DOESN'T WORK - KEY ISSUE. DUMB */}
-
-        {/* <Dropdown>
-          <DropdownTrigger>
-            <Button variant="solid">
-              Pick Category
-            </Button>
-          </DropdownTrigger>
-          <DropdownMenu aria-label="Dynamic Actions" items={options}>
-            {(option) => (
-              <DropdownItem
-                key={option}
-                color="default"
-                className="default"
-                >
-                  {option}
-                </DropdownItem>
-            )}
-          </DropdownMenu>
-        </Dropdown> */}
+        {/* <Dropdown /> */}
 
         <button
           onClick={pickRest}
