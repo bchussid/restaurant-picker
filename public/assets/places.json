@@ -1,5 +1,5 @@
   {
-    "bars": [
+    "Bars": [
       "kingfisher",
       "hi_wire",
       "ponysaurus",
@@ -12,7 +12,7 @@
       "dram_draught",
       "drm_hotel_roof"
     ],
-    "new_spots": [
+    "New Spots": [
       "saltbox",
       "naan_stop",
       "la_mala",
@@ -25,11 +25,11 @@
       "boricua_soul",
       "mezcalito"
     ],
-    "raleigh_spots": [
+    "Raleigh_Spots": [
       "taverna_agora",
       "morgan_food_hall"
   ],
-    "breakfast": [
+    "Breakfast": [
       "elmos",
       "dames",
       "monuts",
@@ -38,17 +38,24 @@
       "foster_market",
       "gugglehopf"
     ],
-    "sandwiches": [
+    "Sandwiches": [
       "eastcut", 
       "ideals", 
       "parker_otis"
     ],
-    "favorites": [
+    "Favorites": [
       "Queeny's", 
       "Thai on Main", 
       "Viceroy", 
       "Grub", 
       "Krill"
+    ],
+    "New Ro Spots": [
+      "Smokehouse",
+      "Metro",
+      "Beechmont",
+      "Jade Spoon",
+      "Herradura"
     ]
   }
 

@@ -1,25 +1,21 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Dropdown from "./Dropdown";
+import usePlaceList from "../hooks/usePlaceList";
 
 function Randomizer() {
-  const PLACES = ["Queeny's", "Thai on Main", "Viceroy", "Grub", "Krill"];
-
-  const [choice, setChoice] = useState("");
-  // categories
   const [categories, setCategories] = useState("");
-
-  const [chosenCat, setChosenCat] = useState("bars");
-
-  // *restuarants by category
-  const [options, setOptions] = useState("");
+  const [chosenCat, setChosenCat] = useState("Bars");
+  // chosen restaurant generated
+  const [choice, setChoice] = useState("");
+  // options by category
+  const [places] = usePlaceList(chosenCat);
 
   useEffect(() => {
     async function getCategories() {
       try {
         const res = await axios.get("/public/assets/places.json");
         setCategories(Object.keys(res.data));
-        setOptions(res.data);
       } catch (error) {
         console.error(error);
       }
@@ -27,16 +23,20 @@ function Randomizer() {
     getCategories();
   }, []);
 
-  console.log(options);
-  console.log(chosenCat);
-  // TODO
-  // abstract fetching logic to different components
-  // logic to get options by category - custom hook?
-
   function pickRest() {
-    let pickedRest = PLACES[Math.floor(Math.random() * PLACES.length)];
+    let pickedRest = places[Math.floor(Math.random() * places.length)];
     setChoice(pickedRest);
     return choice;
+
+    // *debuggins ---------------------
+    // console.log(options);
+    // console.log(chosenCat);
+    // console.log(categories)
+    // * -------------------------------
+
+    // TODO - in progress
+    // abstract fetching logic to different components
+    // logic to get options by category - custom hook?
   }
 
   return (
@@ -45,8 +45,9 @@ function Randomizer() {
         <h3 className="mb-3 text-center text-2xl font-semibold tracking-tight dark:text-white">
           Welcome to the Random Restaurant Generator
         </h3>
-        <p className="pb-3"> Maybe the options go here (dropdown, etc.) </p>
-        <label htmlFor="choices"></label>
+        <label htmlFor="choices" className="pb-3">
+          Please choose from the categories below:
+        </label>
         <select
           id="choices"
           name="choices"
@@ -61,7 +62,7 @@ function Randomizer() {
               </option>
             ))}
         </select>
-        {/* <Dropdown /> */}
+        {/* <Dropdown categories={categories} /> */}
 
         <button
           onClick={pickRest}
@@ -81,7 +82,5 @@ export default Randomizer;
 
 /* 
 juju, krill, durham_food_hall, mother_and_sons, msushi, alpaca_chicken, saint_james, chicken_bee, blue_corn, mramen, queenys, thai_on_main, grub, viceroy, enzos, pie_pushers, gocciolina, pulcinellas
-
-
 
 */

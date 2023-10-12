@@ -15,8 +15,9 @@ function usePlaceList(chosenCat) {
     async function requestPlaceList() {
       setPlaceList([]);
       setLoading(true);
-      const res = await axios.get(`/public/assets/places.json${chosenCat}`);
-      localCache[chosenCat] = res.data || [];
+      const res = await axios.get(`/public/assets/places.json`);
+
+      localCache[chosenCat] = res.data[chosenCat] || [];
       setPlaceList(localCache[chosenCat]);
       setLoading(false);
     }
