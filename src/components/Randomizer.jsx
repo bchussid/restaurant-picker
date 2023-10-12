@@ -8,7 +8,7 @@ function Randomizer() {
   const [chosenCat, setChosenCat] = useState("Bars");
   // chosen restaurant generated
   const [choice, setChoice] = useState("");
-  // options by category
+  // options by category using custom hook
   const [places] = usePlaceList(chosenCat);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ function Randomizer() {
   function pickRest() {
     let pickedRest = places[Math.floor(Math.random() * places.length)];
     setChoice(pickedRest);
-    return choice;
+  }
 
     // *debuggins ---------------------
     // console.log(options);
@@ -37,12 +37,11 @@ function Randomizer() {
     // TODO - in progress
     // abstract fetching logic to different components
     // logic to get options by category - custom hook?
-  }
 
   return (
     <>
       <section className="flex flex-col items-center mx-auto my-4 p-6 w-3/5 h-min bg-gradient-to-br from-emerald-400 to-cyan-400 opacity-90 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <h3 className="mb-3 text-center text-2xl font-semibold tracking-tight dark:text-white">
+        <h3 className=" mb-3 text-center text-2xl font-semibold tracking-tight dark:text-white">
           Welcome to the Random Restaurant Generator
         </h3>
         <label htmlFor="choices" className="pb-3 text-center">
@@ -71,8 +70,8 @@ function Randomizer() {
           Pick Spot!
         </button>
       </section>
-      <div className="flex justify-center p-4 border-2 w-1/5 mx-auto border-gray-500 rounded-md shadow-md">
-        {choice && choice}
+      <div className="flex justify-center p-4 border-2 md:w-1/4 w-3/5 mx-auto border-gray-500 rounded-md shadow-md">
+        {choice ? choice : "I choose..."}
       </div>
     </>
   );
