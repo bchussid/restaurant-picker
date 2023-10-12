@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import Dropdown from "./Dropdown";
+
 import usePlaceList from "../hooks/usePlaceList";
+// import CategoryList from "./CategoryList";
 
 function Randomizer() {
   const [categories, setCategories] = useState("");
@@ -44,14 +45,15 @@ function Randomizer() {
         <h3 className=" mb-3 text-center text-2xl font-semibold tracking-tight dark:text-white">
           Welcome to the Random Restaurant Generator
         </h3>
-        <label htmlFor="choices" className="pb-3 text-center">
+        <span htmlFor="choices" className="pb-3 text-center">
           Please choose from the categories below:
-        </label>
+        </span>
         <select
           id="choices"
           name="choices"
           onChange={(e) => {
             setChosenCat(e.target.value);
+            setChoice("I choose...")
           }}
         >
           {categories &&
@@ -61,7 +63,7 @@ function Randomizer() {
               </option>
             ))}
         </select>
-        {/* <Dropdown categories={categories} /> */}
+       {/* <CategoryList /> */}
 
         <button
           onClick={pickRest}
