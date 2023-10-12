@@ -45,7 +45,7 @@ function Randomizer() {
         <h3 className="mb-3 text-center text-2xl font-semibold tracking-tight dark:text-white">
           Welcome to the Random Restaurant Generator
         </h3>
-        <label htmlFor="choices" className="pb-3">
+        <label htmlFor="choices" className="pb-3 text-center">
           Please choose from the categories below:
         </label>
         <select
