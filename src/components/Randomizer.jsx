@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+// import { Listbox, Transition } from "@headlessui/react";
+// import { ChevronUpDownIcon, CheckIcon } from "@heroicons/react/20/solid";
 
 import usePlaceList from "../hooks/usePlaceList";
-// import CategoryList from "./CategoryList";
+import CategoryList from "./CategoryList";
 
 function Randomizer() {
   const [categories, setCategories] = useState("");
   const [chosenCat, setChosenCat] = useState("Bars");
   // chosen restaurant generated
-  const [choice, setChoice] = useState("");
+  const [choice, setChoice] = useState("I choose...");
   // options by category using custom hook
   const [places] = usePlaceList(chosenCat);
 
@@ -29,15 +31,16 @@ function Randomizer() {
     setChoice(pickedRest);
   }
 
-    // *debuggins ---------------------
-    // console.log(options);
-    // console.log(chosenCat);
-    // console.log(categories)
-    // * -------------------------------
+  // *debuggins ---------------------
+  // console.log(options);
+  // console.log(chosenCat);
+  // console.log(categories)
+  // * -------------------------------
 
-    // TODO - in progress
-    // abstract fetching logic to different components
-    // logic to get options by category - custom hook?
+  // TODO - in progress
+  // extract button into it's own component?
+  // reset choice box after setting new category (see line 58)
+  // investigate errors in categorylist component (proptypes?)
 
   return (
     <>
@@ -48,7 +51,7 @@ function Randomizer() {
         <span htmlFor="choices" className="pb-3 text-center">
           Please choose from the categories below:
         </span>
-        <select
+        {/* <select
           id="choices"
           name="choices"
           onChange={(e) => {
@@ -62,9 +65,14 @@ function Randomizer() {
                 {category}
               </option>
             ))}
-        </select>
-       {/* <CategoryList /> */}
+        </select> */}
 
+        <CategoryList
+          categories={categories}
+          chosenCat={chosenCat}
+          setChosenCat={setChosenCat}
+          setChoice={setChoice}
+        />
         <button
           onClick={pickRest}
           className="font-mono font-semibold bg-gradient-to-r from-pink-400 to-rose-400 opacity-90 uppercase w-48 bg-slate-100 mt-3 py-3 px-4 rounded border-2 border-black shadow-[0.25rem_0.25rem_#121212] transition-transform-box-shadow duration-[50ms] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[0.125rem_0.125rem_#121212]"
@@ -72,6 +80,7 @@ function Randomizer() {
           Pick Spot!
         </button>
       </section>
+      {/* Choice box */}
       <div className="flex justify-center p-4 border-2 md:w-1/4 w-3/5 mx-auto border-gray-500 rounded-md shadow-md">
         {choice ? choice : "I choose..."}
       </div>
