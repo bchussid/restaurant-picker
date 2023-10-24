@@ -39,6 +39,8 @@ function Randomizer() {
   // nice-to-have: reset choice box after setting new category
   // put choice box in main section - fixes opacity issue of dropdown
     // make section nicer to look at - full(ish) page? background?
+  
+  // ! add mongo/express backend with CRUD
 
   return (
     <>
