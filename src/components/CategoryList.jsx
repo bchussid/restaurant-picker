@@ -3,6 +3,8 @@ import { ChevronUpDownIcon, CheckIcon } from "@heroicons/react/20/solid";
 import { Fragment } from "react";
 
 function CategoryList({ categories, chosenCat, setChosenCat }) {
+  // TODO: Choice box should reset when category is changed
+
   return (
     <>
       <Listbox value={chosenCat} onChange={setChosenCat} className="w-48">
@@ -29,7 +31,7 @@ function CategoryList({ categories, chosenCat, setChosenCat }) {
                     key={category}
                     className={({ active }) =>
                       `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                        active ? "bg-amber-100 text-amber-900" : "text-gray-900"
+                        active ? "bg-amber-200 text-amber-900" : "text-gray-900"
                       }`
                     }
                     value={category}
@@ -44,7 +46,7 @@ function CategoryList({ categories, chosenCat, setChosenCat }) {
                           {category}
                         </span>
                         {selected ? (
-                          <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
+                          <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-700">
                             <CheckIcon className="h-5 w-5" aria-hidden="true" />
                           </span>
                         ) : null}

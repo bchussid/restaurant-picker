@@ -1,8 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-// import { Listbox, Transition } from "@headlessui/react";
-// import { ChevronUpDownIcon, CheckIcon } from "@heroicons/react/20/solid";
-
 import usePlaceList from "../hooks/usePlaceList";
 import CategoryList from "./CategoryList";
 
@@ -38,40 +35,24 @@ function Randomizer() {
   // * -------------------------------
 
   // TODO - in progress
-  // extract button into it's own component?
-  // reset choice box after setting new category (see line 58)
-  // investigate errors in categorylist component (proptypes?)
+  // not needed now?: extract button into it's own component? - not sure why now
+  // nice-to-have: reset choice box after setting new category
+  // put choice box in main section - fixes opacity issue of dropdown
+    // make section nicer to look at - full(ish) page? background?
 
   return (
     <>
-      <section className="flex flex-col items-center mx-auto my-4 p-6 w-3/5 h-min bg-gradient-to-br from-emerald-400 to-cyan-400 opacity-90 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <section className="flex flex-col items-center mx-auto my-4 p-6 w-3/5 h-max bg-gradient-to-br from-emerald-400 to-cyan-400 opacity-90 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <h3 className=" mb-3 text-center text-2xl font-semibold tracking-tight dark:text-white">
           Welcome to the Random Restaurant Generator
         </h3>
         <span htmlFor="choices" className="pb-3 text-center">
           Please choose from the categories below:
         </span>
-        {/* <select
-          id="choices"
-          name="choices"
-          onChange={(e) => {
-            setChosenCat(e.target.value);
-            setChoice("I choose...")
-          }}
-        >
-          {categories &&
-            categories.map((category) => (
-              <option key={category} value={category}>
-                {category}
-              </option>
-            ))}
-        </select> */}
-
         <CategoryList
           categories={categories}
           chosenCat={chosenCat}
           setChosenCat={setChosenCat}
-          setChoice={setChoice}
         />
         <button
           onClick={pickRest}
