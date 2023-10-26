@@ -41,6 +41,7 @@ function Randomizer() {
     // make section nicer to look at - full(ish) page? background?
   
   // ! add mongo/express backend with CRUD
+  // ! make "custom mode" where you can add choices and they won't persist long term (localStorage?) vs. use choices you've stored in DB
 
   return (
     <>
