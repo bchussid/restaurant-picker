@@ -1,62 +1,54 @@
-  {
-    "Bars": [
-      "Kingfisher",
-      "Hi Wire",
-      "Ponysaurus",
-      "Fullsteam",
-      "Surf Club",
-      "Accordian Club",
-      "Clouds",
-      "Geer St Garden",
-      "Glass Jug",
-      "Dram & Draught",
-      "Drm Hotel Roof"
-    ],
-    "New Spots": [
-      "Saltbox",
-      "Naan Stop",
-      "La Mala",
-      "Southern Thing",
-      "Goorsha",
-      "Exvoto",
-      "Mavericks",
-      "East Coast Asian Bistro",
-      "Roses Dumplings",
-      "Boricua Soul",
-      "Mezcalito"
-    ],
-    "Raleigh Spots": [
-      "Taverna Agora",
-      "Morgan Food Hall"
+{
+  "Bars": [
+    "Kingfisher",
+    "Hi Wire",
+    "Ponysaurus",
+    "Fullsteam",
+    "Surf Club",
+    "Accordian Club",
+    "Clouds",
+    "Geer St Garden",
+    "Glass Jug",
+    "Dram & Draught",
+    "Drm Hotel Roof"
   ],
-    "Breakfast": [
-      "Elmos",
-      "Dames",
-      "Monuts",
-      "Press",
-      "Ny Bagel Raleigh",
-      "Foster Market",
-      "Gugglehopf"
-    ],
-    "Sandwiches": [
-      "Eastcut", 
-      "Ideals", 
-      "Parker & Otis"
-    ],
-    "Favorites": [
-      "Queeny's", 
-      "Thai On Main", 
-      "Viceroy", 
-      "Grub", 
-      "Krill",
-      "Twisted Noodle"
-    ],
-    "New Ro Spots": [
-      "Smokehouse",
-      "Metro",
-      "Beechmont",
-      "Jade Spoon",
-      "Herradura"
-    ]
-  }
-
+  "New Spots": [
+    "Saltbox",
+    "Naan Stop",
+    "La Mala",
+    "Southern Thing",
+    "Goorsha",
+    "Exvoto",
+    "Mavericks",
+    "East Coast Asian Bistro",
+    "Roses Dumplings",
+    "Boricua Soul",
+    "Mezcalito"
+  ],
+  "Raleigh Spots": ["Taverna Agora", "Morgan Food Hall"],
+  "Breakfast": [
+    "Elmos",
+    "Dames",
+    "Monuts",
+    "Press",
+    "Ny Bagel Raleigh",
+    "Foster Market",
+    "Gugglehopf"
+  ],
+  "Sandwiches": ["Eastcut", "Ideals", "Parker & Otis"],
+  "Favorites": [
+    "Queeny's",
+    "Thai On Main",
+    "Viceroy",
+    "Grub",
+    "Krill",
+    "Twisted Noodle"
+  ],
+  "New Ro Spots": [
+    "Smokehouse",
+    "Metro",
+    "Beechmont",
+    "Jade Spoon",
+    "Herradura"
+  ]
+}
