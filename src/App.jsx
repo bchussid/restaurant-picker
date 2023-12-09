@@ -4,16 +4,19 @@ import { MoonIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(false);
   //todo: only toggles if in lightmode is user setting, does nothing if user setting is darkmode
   return (
     <>
-    <main className={darkMode ? 'dark' : ''}>
-      <div className="dark:bg-slate-800">
-      <MoonIcon className="h-10 w-10 dark:text-slate-100" onClick={() => setDarkMode(!darkMode)} />
-      <Randomizer />
-      </div>
-    </main>
+      <main className={darkMode ? "dark" : ""}>
+        <div className="dark:bg-slate-800">
+          <MoonIcon
+            className="h-10 w-10 dark:text-slate-100"
+            onClick={() => setDarkMode(!darkMode)}
+          />
+          <Randomizer />
+        </div>
+      </main>
     </>
   );
 }

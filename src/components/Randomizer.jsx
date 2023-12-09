@@ -38,8 +38,8 @@ function Randomizer() {
   // not needed now?: extract button into it's own component? - not sure why now
   // nice-to-have: reset choice box after setting new category
   // put choice box in main section - fixes opacity issue of dropdown
-    // make section nicer to look at - full(ish) page? background?
-  
+  // make section nicer to look at - full(ish) page? background?
+
   // ! add mongo/express || next/prisma/mongo backend with CRUD
   // ! make "custom mode" where you can add choices and they won't persist long term (localStorage?) vs. use choices you've stored in DB
 
