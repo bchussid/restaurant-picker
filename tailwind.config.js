@@ -6,4 +6,7 @@ export default {
   },
   darkMode: "class",
   plugins: ["@headlessui/tailwindcss", require('daisyui')],
+  daisyui: {
+    themes: ["light", "dark", "synthwave"]
+  }
 };

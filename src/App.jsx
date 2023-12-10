@@ -2,6 +2,7 @@ import "./App.css";
 import Randomizer from "./components/Randomizer";
 import { MoonIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
+import ThemeSwitcher from "./components/ThemeSwitcher";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -10,10 +11,11 @@ function App() {
     <>
       <main className={darkMode ? "dark" : ""}>
         <div className="dark:bg-slate-800">
-          <MoonIcon
+          {/* <MoonIcon
             className="h-10 w-10 dark:text-slate-100"
             onClick={() => setDarkMode(!darkMode)}
-          />
+          /> */}
+          <ThemeSwitcher />
           <Randomizer />
         </div>
       </main>
