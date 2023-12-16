@@ -1,7 +1,7 @@
 function ThemeSwitcher() {
   // Still getting buggy behavior - something to do with reading system settings vs manually changing theme
   return (
-    <label className="flex cursor-pointer gap-2">
+    <label className="flex cursor-pointer gap-2 mt-4 ml-4">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"
