@@ -66,7 +66,10 @@ function Randomizer() {
       </section>
       {/* Choice box */}
       <div className="flex justify-center p-4 border-2 md:w-1/4 w-3/5 mx-auto border-gray-500 rounded-md shadow-md">
+
+        {/* Reset choice box here */}
         {choice ? choice : "I choose..."}
+        
       </div>
     </>
   );
