@@ -46,7 +46,7 @@ function Randomizer() {
   return (
     <>
       <section className="flex flex-col items-center mx-auto my-4 p-6 w-3/5 h-max bg-gradient-to-br from-emerald-400 to-cyan-400 opacity-90 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <h3 className=" mb-3 text-center text-2xl font-semibold tracking-tight dark:text-white">
+        <h3 className=" mb-3 text-center text-2xl font-semibold tracking-tight">
           Welcome to the Random Restaurant Generator
         </h3>
         <span htmlFor="choices" className="pb-3 text-center">
@@ -66,18 +66,11 @@ function Randomizer() {
       </section>
       {/* Choice box */}
       <div className="flex justify-center p-4 border-2 md:w-1/4 w-3/5 mx-auto border-gray-500 rounded-md shadow-md">
-
         {/* Reset choice box here */}
         {choice ? choice : "I choose..."}
-        
       </div>
     </>
   );
 }
 
 export default Randomizer;
-
-/* 
-juju, krill, durham_food_hall, mother_and_sons, msushi, alpaca_chicken, saint_james, chicken_bee, blue_corn, mramen, queenys, thai_on_main, grub, viceroy, enzos, pie_pushers, gocciolina, pulcinellas
-
-*/

@@ -5,7 +5,6 @@ import { useState } from "react";
 import ThemeSwitcher from "./components/ThemeSwitcher";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
   //todo: only toggles if in lightmode is user setting, does nothing if user setting is darkmode
   // {darkMode ? "dark" : ""}
   return (
