@@ -1,18 +1,22 @@
 import "./styles/App.css";
 import Randomizer from "./components/Randomizer";
-import { MoonIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
-import ThemeSwitcher from "./components/ThemeSwitcher";
+import { ThemeProvider } from "./components/theme-provider";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ModeToggle } from "./components/mode-toggler";
 
 function App() {
   return (
     <>
-      <Router>
-        <Routes>
-          <Route exact path="/" element={<Randomizer />} />
-        </Routes>
-      </Router>
+      
+      <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+          <ModeToggle />
+          <Router>
+            <Routes>
+              <Route exact path="/" element={<Randomizer />} />
+            </Routes>
+          </Router>
+      </ThemeProvider>
+      
     </>
   );
 }
